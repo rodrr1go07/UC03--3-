@@ -1,0 +1,62 @@
+.detalhe-page{
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.detalhe-filme-section{
+    padding: 2rem 0;
+}
+
+.detalhe-filme-card{
+    display: flex;
+    gap: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 .125rem  .625rem rgba(0,0,0,0.08);
+}
+.detalhe-filme-imagem{
+    flex: 1;
+    max-width: 20rem;
+}
+.detalhe-filme-imagem img{
+    width: 100%;
+    border-radius: .75rem;
+    object-fit: cover;
+}
+.detalhe-filme-conteudo{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.detalhe-filme-conteudo h1{
+    font-size: 2rem;
+    color: #1f2937;
+}
+.detalhe-filme-conteudo p{
+   color: #555;
+   margin-top: 1rem;
+}
+.botao-voltar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin: 0 1rem 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: .625rem;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-voltar:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+
