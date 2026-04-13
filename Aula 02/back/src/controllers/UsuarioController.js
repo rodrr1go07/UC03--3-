@@ -4,6 +4,16 @@ import { v4 as uuidv4 } from "uuid";
 import jwt from "jsonwebtoken";
 
 export class UsuarioController {
+    static obterCookieOptions() {
+        const isProducao = process.env.NODE_ENV === "production";
+        return {
+            httpOnly: true,
+            sameSite: isProducao ? "none" : "lax",
+            secure: isProducao,
+            maxAge: 60 * 60 * 1000
+        };
+    }
+
     static async listarUsuarios(req, res) {
         try {
             const result = await UsuarioModel.listarUsuarios();
@@ -115,11 +125,7 @@ export class UsuarioController {
                 process.env.JWT_SECRET,
                 { expiresIn: "1h" }
             )
-            res.cookie("token", token, {
-                httpOnly: true,
-                sameSite: "lax",
-                maxAge: 60 * 60 * 1000 //1h
-            });
+            res.cookie("token", token, UsuarioController.obterCookieOptions());
             res.status(200).json({
                 msg: "Login realizado com sucesso",
                 usuario: {
@@ -145,7 +151,8 @@ export class UsuarioController {
 
     static async logoutUsuario(req, res){
         try {
-            res.clearCookie("token");
+            const { maxAge, ...cookieOptions } = UsuarioController.obterCookieOptions();
+            res.clearCookie("token", cookieOptions);
             res.status(200).json({msg: "Logout realizado com sucesso!"});
         } catch (error) {
             res.status(500).json({msg: "Erro interno ao realizar o logout", erro: error.message})

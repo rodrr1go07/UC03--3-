@@ -53,15 +53,13 @@ async function inicializarTabelas() {
 async function iniciarServidor() {
     try {
         await inicializarTabelas();
-        console.log("✓ Tabelas criadas/verificadas com sucesso");
+        app.listen(PORT, ()=>{
+            console.log(`http://localhost:${PORT}`);
+        });
     } catch (error) {
-        console.error("⚠ Erro ao inicializar as tabelas do banco:", error.message);
-        console.log("⚠ Continuando sem banco de dados...");
+        console.error("Erro ao inicializar as tabelas do banco:", error.message);
+        process.exit(1);
     }
-    
-    app.listen(PORT, ()=>{
-        console.log(`✓ Servidor rodando em http://localhost:${PORT}`);
-    });
 }
 
 iniciarServidor();
