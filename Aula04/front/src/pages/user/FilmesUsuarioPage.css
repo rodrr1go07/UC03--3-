@@ -1,0 +1,126 @@
+.usuario-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.cabecalho-usuario {
+    margin-bottom: 24px;
+}
+
+.cabecalho-usuario h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.cabecalho-usuario p {
+    color: #555;
+}
+.filtros-container{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+.busca-box{
+    margin: 1.25rem 0;
+}
+.busca-box input {
+    width: 16.25rem;
+    padding: .75rem;
+    border-radius: .5rem;
+    border: .0625rem solid #ccc;
+    outline: none;
+}
+.busca-box input:focus{
+    border-color: #2563eb;
+}
+.ordenacao-botoes{
+    display: flex;
+    gap: .625rem;
+    flex-wrap: wrap;
+}
+.ordenacao-botoes button{
+    padding: .625rem .875rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #e5e7eb;
+    color: #111827;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.ordenacao-botoes button:hover{
+    background-color: #2562eb;
+    color: white;
+}
+.ordenacao-botoes button.ativo{
+    background-color:#2562eb;
+    color: white;
+}
+
+.grid-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.filme-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.14);
+}
+
+.filme-card-imagem {
+    width: 100%;
+    height: 21.25rem;
+    object-fit: cover;
+}
+
+.filme-card-conteudo {
+    padding: 1rem;
+    flex: 1;
+}
+
+.filme-card-conteudo h2{
+    font-size: 1.1rem;
+    margin-bottom: 0.625rem;
+    color: #111827;
+}
+.filme-card-conteudo p{
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.filme-card-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filme-card-link:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+.filme-card-link:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
